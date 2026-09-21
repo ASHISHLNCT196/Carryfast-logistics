@@ -1,0 +1,86 @@
+:root {
+  --navy: #1f3864;
+  --teal: #0e7c7b;
+  --gray: #595959;
+  --light: #f2f2f2;
+  --red: #c00000;
+  --green: #1a7a3c;
+  --amber: #b8860b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: #f7f8fa; color: #1a1a1a; }
+
+.app-shell { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 220px; background: var(--navy); color: #fff; padding: 24px 16px; flex-shrink: 0;
+}
+.sidebar h2 { font-size: 16px; margin: 0 0 4px; }
+.sidebar p { font-size: 12px; opacity: 0.7; margin: 0 0 24px; }
+.sidebar nav a {
+  display: block; color: #fff; text-decoration: none; padding: 10px 12px; border-radius: 6px;
+  margin-bottom: 4px; font-size: 14px; opacity: 0.85;
+}
+.sidebar nav a:hover, .sidebar nav a.active { background: rgba(255,255,255,0.12); opacity: 1; }
+.sidebar .logout { margin-top: 40px; cursor: pointer; font-size: 13px; opacity: 0.7; }
+.sidebar .logout:hover { opacity: 1; }
+
+.main { flex: 1; padding: 28px 36px; max-width: 1200px; }
+.main h1 { font-size: 22px; color: var(--navy); margin-top: 0; }
+
+.card-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.kpi-card {
+  background: #fff; border-radius: 10px; padding: 18px 20px; min-width: 160px; flex: 1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-top: 3px solid var(--teal);
+}
+.kpi-card .label { font-size: 12px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.03em; }
+.kpi-card .value { font-size: 28px; font-weight: 700; color: var(--navy); margin-top: 6px; }
+
+.panel { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 24px; }
+.panel h3 { margin-top: 0; font-size: 15px; color: var(--navy); }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; background: var(--navy); color: #fff; padding: 10px; font-weight: 600; }
+td { padding: 10px; border-bottom: 1px solid #eee; }
+tr:nth-child(even) td { background: var(--light); }
+
+.btn {
+  background: var(--teal); color: #fff; border: none; padding: 8px 16px; border-radius: 6px;
+  font-size: 13px; cursor: pointer; font-weight: 600;
+}
+.btn:hover { opacity: 0.9; }
+.btn.secondary { background: #fff; color: var(--navy); border: 1px solid var(--navy); }
+.btn.danger { background: var(--red); }
+
+.form-row { margin-bottom: 12px; display: flex; flex-direction: column; gap: 4px; }
+.form-row label { font-size: 12px; color: var(--gray); }
+.form-row input, .form-row select {
+  padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px;
+}
+
+.login-wrap {
+  display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--navy);
+}
+.login-box {
+  background: #fff; padding: 40px; border-radius: 12px; width: 340px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+.login-box h1 { color: var(--navy); font-size: 20px; margin-bottom: 4px; }
+.login-box p.sub { color: var(--gray); font-size: 13px; margin-bottom: 24px; }
+.error-text { color: var(--red); font-size: 13px; margin-top: 8px; }
+
+.badge { padding: 3px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; color: #fff; }
+.badge.available { background: var(--green); }
+.badge.occupied { background: var(--amber); }
+.badge.maintenance { background: var(--red); }
+.badge.active { background: var(--teal); }
+.badge.closed { background: var(--gray); }
+
+.dock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
+.dock-tile { background: #fff; border-radius: 8px; padding: 14px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.dock-tile .num { font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.toolbar input { padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc; width: 240px; }
+
+.inline-form { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 20px; }
